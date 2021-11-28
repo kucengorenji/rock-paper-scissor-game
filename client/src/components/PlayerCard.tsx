@@ -4,7 +4,7 @@ const PlayerCard = () => {
     return (
         <>
             <div className="p-5 bg-gray-700 rounded-lg active:bg-yellow-500 my-1">
-                <div className="card flex justify-between p-2">
+                <div className="card flex p-2 space-x-2">
                     <div>
                         <img className="" src={photo} alt="" />
                     </div>
