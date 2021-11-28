@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <>
-            <footer className="fixed bottom-0 w-screen ">
+            <footer className="fixed bottom-0 w-screen text-white">
                 <div className="flex-row justify-center divide-y-2">
                     <nav className="p-3">
                         <ul className="flex justify-center space-x-5">
