@@ -1,7 +1,7 @@
 const PlayerCard = () => {
     return (
         <>
-            <div className="p-5 bg-gray-700 rounded-lg">
+            <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
                 <div className="card flex">
                     <div>
                         <img className="" src="" alt="" />
