@@ -10,7 +10,7 @@ const OppenentSelect = () => {
 
     return (
         <>
-            <div className="py-6">
+            <div className="py-6 text-white">
                 <h1 className="p-6">CHOOSE YOUR OPPONENT</h1>
                 <div className="flex space-x-2 text-white">
                     <div className="p-5 bg-gray-700 rounded-lg">
