@@ -13,7 +13,7 @@ const Main = () => {
         <>
             <div style={style} className="h-screen w-screen">
                 <Navbar />
-                <div className="grid justify-items-center py-12 m-10 bg-blue-300">
+                <div className="grid justify-items-center py-12 m-10">
                     <OpponentSelect />
                     <PlayerList />
                 </div>
