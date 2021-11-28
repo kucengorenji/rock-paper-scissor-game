@@ -11,7 +11,7 @@ const OppenentSelect = () => {
     return (
         <>
             <div className="py-6 text-white">
-                <h1 className="p-6">CHOOSE YOUR OPPONENT</h1>
+                <h1 className="py-6 text-3xl font-bold">CHOOSE YOUR OPPONENT</h1>
                 <div className="flex space-x-2 text-white">
                     <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
                         <button onClick={handleClick} className="">NOVICE</button>
