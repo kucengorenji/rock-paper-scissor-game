@@ -25,7 +25,7 @@ const LoginCard = () => {
                         <p className="text-red-500 text-xs italic">Konfirmasi Password</p>
                     </div>
                     <div className="items-center">
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="button">Register</button>
+                        <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="button">Register</button>
                     </div>
                 </form>
             </div>
