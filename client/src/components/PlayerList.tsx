@@ -1,7 +1,16 @@
+import PlayerCard from "./PlayerCard"
+
 const PlayerList = () => {
     return (
         <>
-            <div>hello world</div>
+            <div className="flex space-x-2">
+                <PlayerCard />
+                <PlayerCard />
+                <PlayerCard />
+                <PlayerCard />
+                <PlayerCard />
+                <PlayerCard />
+            </div>
         </>
     )
 }

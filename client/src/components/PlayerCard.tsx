@@ -1,7 +1,7 @@
 const PlayerCard = () => {
     return (
         <>
-            <div>
+            <div className="p-5 bg-gray-700 rounded-lg">
                 <div className="card flex">
                     <div>
                         <img className="" src="" alt="" />
@@ -13,7 +13,7 @@ const PlayerCard = () => {
                     <p>Never should have come here!</p>
                     <p>Since October 18, 2018</p>
                 </div>
-                <button>FIGHT</button>
+                <button className="btn my-2 py-2 px-4 bg-yellow-400 rounded-full">FIGHT</button>
             </div>
         </>
     )

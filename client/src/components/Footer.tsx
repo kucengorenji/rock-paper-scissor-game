@@ -3,7 +3,7 @@ const Footer = () => {
         <>
             <footer className="fixed bottom-0 w-screen ">
                 <div className="flex-row justify-center divide-y-2">
-                    <nav className="p-3" role="navigation ">
+                    <nav className="p-3">
                         <ul className="flex justify-center space-x-5">
                             <li>
                                 <a href="AA">MAIN</a>
