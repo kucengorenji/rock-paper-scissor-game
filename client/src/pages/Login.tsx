@@ -1,5 +1,11 @@
+import LoginCard from "../components/LoginCard"
+
 const Login = () => {
     return (
-        <LoginCard />
+        <div className="flex w-screen h-screen justify-center items-center">
+            <LoginCard />
+        </div>
     )
 }
+
+export default Login;
