@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-gray-700 sticky">
+        <div className="navbar bg-gray-700">
             <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-3 text-white mx-24">
                 <div className="flex items-center flex-shrink-0 text-white mr-6">
                     <Link to={"/"}><h1 className="font-bold text-xl tracking-tight">SUIT GAME</h1></Link>

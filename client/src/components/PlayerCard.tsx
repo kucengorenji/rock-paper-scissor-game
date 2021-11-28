@@ -3,7 +3,7 @@ import photo from '../assets/photo.png'
 const PlayerCard = () => {
     return (
         <>
-            <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
+            <div className="p-5 bg-gray-700 rounded-lg active:bg-yellow-500 my-1">
                 <div className="card flex justify-between p-2">
                     <div>
                         <img className="" src={photo} alt="" />

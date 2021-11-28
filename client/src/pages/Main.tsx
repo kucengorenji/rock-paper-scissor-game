@@ -6,12 +6,15 @@ import bg from '../assets/requirements-section.png'
 
 const Main = () => {
     const style: React.CSSProperties = {
-        backgroundImage: `url(${bg})`
+        backgroundImage: `url(${bg})`,
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover"
     }
 
     return (
         <>
-            <div style={style} className="h-screen w-screen">
+            <div style={style} className="h-100 w-screen">
                 <Navbar />
                 <div className="grid justify-items-center py-12 m-10">
                     <OpponentSelect />
