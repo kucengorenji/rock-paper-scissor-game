@@ -1,12 +1,12 @@
 import photo from '../assets/photo.png'
 
-export interface PlayerCard {
+export interface card {
     name: string,
     bio: string,
     level: string,
 }
 
-const PlayerCard = (data: PlayerCard) => {
+const PlayerCard = (data: card) => {
     return (
         <>
             <div className="p-5 bg-gray-700 rounded-lg active:bg-yellow-500 my-1">

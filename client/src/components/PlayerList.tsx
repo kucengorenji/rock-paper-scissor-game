@@ -14,7 +14,7 @@ const PlayerList = () => {
 
     return (
         <>
-            <div className="grid block space-x-2 grid-cols-4 grid-flow-row auto-rows-max mx-10 my-3">
+            <div className="grid space-x-2 grid-cols-4 grid-flow-row auto-rows-max mx-10 my-3">
                 {playerList}
             </div>
         </>
