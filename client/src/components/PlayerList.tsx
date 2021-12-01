@@ -1,51 +1,21 @@
 import PlayerCard from "./PlayerCard"
+import data from "../data/opponent.json"
+
+
 
 const PlayerList = () => {
+    const playerList = data.map((e) => {
+        return (
+            <div key={e.id}>
+                <PlayerCard level={e.level} bio={e.bio} name={e.name} />
+            </div>
+        )
+    })
+
     return (
         <>
-            <div className="grid block space-x-2 grid-cols-4 grid-flow-row auto-rows-max mx-10 my-3">
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-                <PlayerCard />
-
+            <div className="grid space-x-2 grid-cols-4 grid-flow-row auto-rows-max mx-10 my-3">
+                {playerList}
             </div>
         </>
     )
