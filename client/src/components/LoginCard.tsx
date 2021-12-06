@@ -1,17 +1,14 @@
 import { useState } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LoginCard = () => {
+    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [password, setPassword] = useState('')
-
     const user = {
         username: 'mikael',
         password: '123'
     }
-
-    const navigate = useNavigate();
-
     const handleClick = (e: any) => {
         e.preventDefault();
         console.log(name)
