@@ -51,7 +51,7 @@ const Main = () => {
                                 </div>
 
                                 <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
-                                    <button onClick={handleClick} data-value='grand master' className="">GRAND MASTER</button>
+                                    <button onClick={handleClick} data-value='grand-master' className="">GRAND MASTER</button>
                                 </div>
                             </div>
                         </div>
