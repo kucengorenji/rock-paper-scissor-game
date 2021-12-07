@@ -1,4 +1,5 @@
 import RegisterCard from "../components/RegisterCard"
+import Navbar from '../components/Navbar'
 import bg from '../assets/requirements-section.png'
 
 const Register = () => {
@@ -7,10 +8,14 @@ const Register = () => {
     }
 
     return (
-        <div style={style} className="flex w-screen h-screen justify-center items-center">
-            <RegisterCard />
+        <div style={style} className="h-screen w-screen">
+            <Navbar />
+            <div className="flex justify-center items-center">
+                <RegisterCard />
+            </div>
         </div>
     )
+
 }
 
 export default Register;

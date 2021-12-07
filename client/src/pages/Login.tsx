@@ -1,4 +1,5 @@
 import LoginCard from "../components/LoginCard"
+import Navbar from '../components/Navbar'
 import bg from '../assets/requirements-section.png'
 
 const Login = () => {
@@ -7,8 +8,11 @@ const Login = () => {
     }
 
     return (
-        <div style={style} className="flex w-screen h-screen justify-center items-center">
-            <LoginCard />
+        <div style={style} className="h-screen w-screen">
+            <Navbar />
+            <div className="flex justify-center items-center">
+                <LoginCard />
+            </div>
         </div>
     )
 }
