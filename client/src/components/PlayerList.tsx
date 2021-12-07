@@ -1,9 +1,7 @@
 import PlayerCard from "./PlayerCard"
 import data from "../data/opponent.json"
 
-
-
-const PlayerList = () => {
+const PlayerList = () => {    
     const playerList = data.map((e) => {
         return (
             <div key={e.id}>
