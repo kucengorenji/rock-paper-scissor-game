@@ -16,7 +16,7 @@ const LoginCard = () => {
         if (name === user.username && password === user.password) {
             navigate("/");
         } else {
-            alert("ada yang salah")
+            alert("anda salah gaboleh login, masukan username:mikael & password: 123")
         }
     }
 
