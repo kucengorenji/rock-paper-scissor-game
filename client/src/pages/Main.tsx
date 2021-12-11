@@ -22,7 +22,7 @@ const Main = () => {
 
     return (
         <>
-            <div style={style} className="h-100 w-screen">
+            <div style={style} className="min-h-screen w-screen">
                 <Navbar />
                 <div>
                     <div className="grid justify-items-center py-12 m-10">
@@ -57,7 +57,9 @@ const Main = () => {
                         </div>
                     </div>
                 </div>
-                <PlayerList level={playerLevel} />
+                <div className="min-h-screen">
+                    <PlayerList level={playerLevel} />
+                </div>
                 <Footer />
             </div>
 
