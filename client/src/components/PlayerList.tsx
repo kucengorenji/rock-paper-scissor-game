@@ -3,7 +3,6 @@ import data from "../data/opponent.json"
 
 const PlayerList = (level: {level: string | undefined}) => {
     const filterPlayer = data.filter(player => player.level === level.level)
-    console.log(filterPlayer)
     
     const playerList = filterPlayer.map((e) => {
         return (
