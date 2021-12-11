@@ -1,8 +1,10 @@
 import PlayerCard from "./PlayerCard"
 import data from "../data/opponent.json"
 
-const PlayerList = () => {    
-    const playerList = data.map((e) => {
+const PlayerList = (level: any) => {
+    const filterPlayer = data.filter(player => player.level === level.level)
+    console.log(filterPlayer)
+    const playerList = filterPlayer.map((e) => {
         return (
             <div key={e.id}>
                 <PlayerCard level={e.level} bio={e.bio} name={e.name} />

@@ -30,34 +30,34 @@ const Main = () => {
                         <h1 className="py-6 text-3xl font-bold">CHOOSE YOUR OPPONENT</h1>
                             <div className="flex space-x-2 text-white">
                                 <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
-                                    <button onClick={handleClick} data-value='novice' className="">NOVICE</button>
+                                    <button onClick={handleClick} data-value='NOVICE' className="">NOVICE</button>
                                 </div>
                                 <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
-                                    <button onClick={handleClick} data-value='class-a' className="">CLASS A</button>
+                                    <button onClick={handleClick} data-value='CLASS A' className="">CLASS A</button>
                                 </div>
                                 <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
-                                    <button onClick={handleClick} data-value='class-b' className="">CLASS B</button>
+                                    <button onClick={handleClick} data-value='CLASS B' className="">CLASS B</button>
                                 </div>
                                 <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
-                                    <button onClick={handleClick} data-value='class-c' className="">CLASS C</button>
-                                </div>
-
-                                <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
-                                    <button onClick={handleClick} data-value='class-d' className="">CLASS D</button>
+                                    <button onClick={handleClick} data-value='CLASS C' className="">CLASS C</button>
                                 </div>
 
                                 <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
-                                    <button onClick={handleClick} data-value='candidate-master' className="">CANDIDATE MASTER</button>
+                                    <button onClick={handleClick} data-value='CLASS D' className="">CLASS D</button>
                                 </div>
 
                                 <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
-                                    <button onClick={handleClick} data-value='grand-master' className="">GRAND MASTER</button>
+                                    <button onClick={handleClick} data-value='CANDIDATE MASTER' className="">CANDIDATE MASTER</button>
+                                </div>
+
+                                <div className="p-5 bg-gray-700 rounded-lg hover:bg-yellow-500 active:bg-yellow-500">
+                                    <button onClick={handleClick} data-value='GRAND MASTER' className="">GRAND MASTER</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <PlayerList />
+                <PlayerList level={playerLevel} />
                 <Footer />
             </div>
 
