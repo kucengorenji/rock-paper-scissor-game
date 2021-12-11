@@ -9,7 +9,7 @@ export interface card {
 const PlayerCard = (data: card) => {
     return (
         <>
-            <div className="p-5 bg-gray-700 rounded-lg active:bg-yellow-500 my-1">
+            <div className="p-5 bg-gray-700 rounded-lg active:bg-yellow-500 my-2 mx-2 h-60 relative">
                 <div className="card flex p-2 space-x-2">
                     <div>
                         <img className="" src={photo} alt="" />
@@ -23,7 +23,7 @@ const PlayerCard = (data: card) => {
                     <p className="text-white">{data.bio}</p>
                     <p className="text-gray-400 text-sm">Since October 18, 2018</p>
                 </div>
-                <button className="btn my-2 py-2 px-4 bg-yellow-400 rounded-full text-white">FIGHT</button>
+                <button className="btn absolute  inset-x-0 bottom-0 my-4 py-2 px-4 mx-4 bg-yellow-400 rounded-full text-white">FIGHT</button>
             </div>
         </>
     )

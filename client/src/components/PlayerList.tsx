@@ -14,7 +14,7 @@ const PlayerList = (level: {level: string | undefined}) => {
 
     return (
         <>
-            <div className="grid space-x-2 grid-cols-4 grid-flow-row auto-rows-max mx-10 my-3">
+            <div className="grid grid-cols-4 grid-flow-row auto-rows-max mx-10 my-3 px-10">
                 {playerList}
             </div>
         </>
