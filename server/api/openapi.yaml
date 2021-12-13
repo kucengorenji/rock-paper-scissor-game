@@ -13,8 +13,8 @@ servers:
 tags:
 - name: player
   description: player api
-- name: admin
-  description: admin api
+- name: game
+  description: game api
 paths:
   /player:
     get:
@@ -26,10 +26,18 @@ paths:
       responses:
         "200":
           description: success
-          content: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Player'
         "404":
           description: Not Found
           content: {}
+      security:
+      - player_auth:
+        - write:player
+        - read:player
+      - api_key: []
       x-swagger-router-controller: Player
   /player/:id:
     get:
@@ -40,7 +48,10 @@ paths:
       responses:
         "200":
           description: success
-          content: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Player'
         "404":
           description: Not Found
           content: {}
@@ -66,7 +77,10 @@ paths:
       responses:
         "200":
           description: success
-          content: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Player'
         "404":
           description: Not Found
           content: {}
@@ -113,9 +127,55 @@ paths:
         - write:player
         - read:player
       x-swagger-router-controller: Player
+  /game/history:
+    get:
+      tags:
+      - game
+      summary: get all game history
+      operationId: gameHistoryGET
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GameResponses'
+        "404":
+          description: No game history Found
+          content: {}
+      security:
+      - player_auth:
+        - write:player
+        - read:player
+      x-swagger-router-controller: Game
+  /game/history/:id:
+    get:
+      tags:
+      - game
+      summary: get game history on a player
+      operationId: gameHistoryidGET
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GameResponses'
+        "404":
+          description: No game history Found
+          content: {}
+      security:
+      - player_auth:
+        - write:player
+        - read:player
+      x-swagger-router-controller: Game
 components:
   schemas:
     Player:
+      required:
+      - email
+      - password
+      - username
       type: object
       properties:
         id:
@@ -123,28 +183,59 @@ components:
           format: int64
         username:
           type: string
+          example: mikael
         firstName:
           type: string
         lastName:
           type: string
         email:
           type: string
+          example: mikelrisyad@gamil.com
         password:
           type: string
+          example: "123456"
         phone:
           type: string
         avatarUrl:
           type: string
-    ApiResponse:
+      example:
+        firstName: firstName
+        lastName: lastName
+        password: "123456"
+        phone: phone
+        avatarUrl: avatarUrl
+        id: 0
+        email: mikelrisyad@gamil.com
+        username: mikael
+    GameResponses:
       type: object
       properties:
-        code:
-          type: integer
-          format: int32
-        type:
+        history:
+          type: array
+          items:
+            $ref: '#/components/schemas/GameHistory'
+        username:
           type: string
-        message:
+        playerPoint:
           type: string
+      example:
+        playerPoint: playerPoint
+        history:
+        - winCount: 0.80082819046101150206595775671303272247314453125
+          gameCount: 6.02745618307040320615897144307382404804229736328125
+        - winCount: 0.80082819046101150206595775671303272247314453125
+          gameCount: 6.02745618307040320615897144307382404804229736328125
+        username: username
+    GameHistory:
+      type: object
+      properties:
+        winCount:
+          type: number
+        gameCount:
+          type: number
+      example:
+        winCount: 0.80082819046101150206595775671303272247314453125
+        gameCount: 6.02745618307040320615897144307382404804229736328125
   securitySchemes:
     player_auth:
       type: oauth2
