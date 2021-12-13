@@ -1,0 +1,224 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Player",
+    "description": "Daftar API Player Chapter 8 Dede Nurrahman",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "variables": {},
+      "description": "localhost"
+    }
+  ],
+  "paths": {
+    "/players/": {
+      "get": {
+        "tags": ["Player"],
+        "summary": "Get Players",
+        "description": "Get All Data Players",
+        "operationId": "getPlayers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Sukses",
+            "headers": {},
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "headers": {},
+            "content": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/player/{_id}": {
+      "get": {
+        "tags": ["Player"],
+        "summary": "Get Players Id",
+        "description": "Get Data Players By Id",
+        "operationId": "getPlayerId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Id Player"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sukses",
+            "headers": {},
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "headers": {},
+            "content": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/player/post": {
+      "post": {
+        "tags": ["Player"],
+        "summary": "Post Player",
+        "description": "Insert Data Player",
+        "operationId": "postPlayer",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": ["application/x-www-form-urlencoded"],
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": ["username", "email", "password", "experience", "lvl"],
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "experience": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "lvl": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/player/update/{_id}": {
+      "put": {
+        "tags": ["Player"],
+        "summary": "Put Player",
+        "description": "Edit and Update Data Player",
+        "operationId": "putPlayer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Id Player"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": ["username", "email", "password", "experience", "lvl"],
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "experience": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "lvl": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/player/delete/{_id}": {
+      "delete": {
+        "tags": ["Player"],
+        "summary": "Delete Player",
+        "description": "Delete Data Player",
+        "operationId": "deletePlayer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Id Player"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "security": [{}],
+  "tags": [
+    {
+      "name": "Player",
+      "description": ""
+    }
+  ]
+}

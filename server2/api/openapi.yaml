@@ -1,0 +1,160 @@
+openapi: 3.0.1
+info:
+  title: Rock Paper Scissor goesbrrr
+  description: Rock Paper Scissor dashboard api
+  contact:
+    email: mikelrisyad@gmail.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  version: 1.0.0
+servers:
+- url: http://localhost:3000/v1
+tags:
+- name: player
+  description: player api
+- name: admin
+  description: admin api
+paths:
+  /player:
+    get:
+      tags:
+      - player
+      summary: Get All Players
+      description: Get All Data Players
+      operationId: getPlayers
+      responses:
+        "200":
+          description: success
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      x-swagger-router-controller: Player
+  /player/:id:
+    get:
+      tags:
+      - player
+      summary: get player id
+      operationId: playeridGET
+      responses:
+        "200":
+          description: success
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      security:
+      - player_auth:
+        - write:player
+        - read:player
+      - api_key: []
+      x-swagger-router-controller: Player
+    put:
+      tags:
+      - player
+      summary: update player id
+      description: update spesific player
+      operationId: playeridPUT
+      requestBody:
+        description: user object that needs to be added to the biodata
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Player'
+        required: true
+      responses:
+        "200":
+          description: success
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      security:
+      - player_auth:
+        - write:player
+        - read:player
+      x-swagger-router-controller: Player
+    post:
+      tags:
+      - player
+      summary: insert player data
+      operationId: playeridPOST
+      requestBody:
+        description: user object that needs to be added to the biodata
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Player'
+        required: true
+      responses:
+        "200":
+          description: success
+          content: {}
+      security:
+      - player_auth:
+        - write:player
+        - read:player
+      x-swagger-router-controller: Player
+    delete:
+      tags:
+      - player
+      summary: delete player on spesific id
+      operationId: playeridDELETE
+      responses:
+        "200":
+          description: success
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      security:
+      - player_auth:
+        - write:player
+        - read:player
+      x-swagger-router-controller: Player
+components:
+  schemas:
+    Player:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        username:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        phone:
+          type: string
+        avatarUrl:
+          type: string
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+  securitySchemes:
+    player_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: http://petstore.swagger.io/oauth/dialog
+          scopes:
+            write:player: modify user biodata
+            read:player: read user biodata
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
